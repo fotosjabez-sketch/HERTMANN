@@ -81,7 +81,7 @@ export function Hero() {
               transition={{ duration: 1.8, ease: EASE, delay: 0.5 }}
             >
               <motion.div style={reduced ? undefined : { scale: plateScale }}>
-                <div className="relative aspect-[776/1116] w-full">
+                <div className="relative aspect-[764/1102] w-full">
                   <Image
                     src="/images/hero-ring.png"
                     alt="Anel HERTMANN em ouro branco, com diamante central de talhe oval"

@@ -66,7 +66,7 @@ de contacto, para assentarem sobre as superfícies brancas e cinzentas da marca.
 | `campaign-portrait.jpg` | Coleção em destaque |
 | `campaign-hero.jpg` | Página Sobre e imagem Open Graph |
 | `boutique-wide.jpg` / `boutique-tall.jpg` | Ateliê e página Sobre |
-| `hero-ring.png` | Objecto do Hero — o anel de assinatura, recortado sobre o vinheta original |
+| `hero-ring.png` | Objecto do Hero — o anel de assinatura, entregue já com canal alfa correto |
 
 ### Recortar uma fotografia nova
 
@@ -83,17 +83,28 @@ python3 scripts/cutout.py foto-original.png public/images/nome.png
 
 Se o fundo não for uniforme, `--inner` e `--outer` afinam os limiares da chave.
 
-Quando o fundo não é uma cor plana — um vinheta, um gradiente, um fundo com
-blobs de luz, como o da fotografia do anel no Hero — `cutout.py` deixa zonas
-por cortar. `scripts/cutout_tolerance.py` resolve isso de outra forma: em vez
-de comparar cada pixel a uma referência global, propaga-se a partir da borda
-comparando cada pixel ao vizinho já classificado como fundo. Segue qualquer
-gradiente, seja qual for a sua forma, e pára exactamente onde o salto de
-luminância é grande — a silhueta nítida da peça.
+**Antes de recortar uma imagem, verifique se ela já não vem com canal alfa.**
+Um PNG exportado de outro sítio pode já trazer a transparência certa — nesse
+caso `cutout.py` está a mais e, pior, pode introduzir defeitos que o ficheiro
+original não tinha (foi o que aconteceu com `hero-ring.png`: a fotografia
+enviada já vinha correctamente recortada, com a abertura entre os aros
+entrelaçados incluída; o utilitário só precisava de a cortar à medida):
 
 ```bash
-pip install pillow numpy
-python3 scripts/cutout_tolerance.py entrada.png public/images/saida.png
+python3 -c "from PIL import Image; im = Image.open('foto.png'); print(im.mode, im.getchannel('A').getextrema() if 'A' in im.mode else 'sem alfa')"
+```
+
+Se o modo for `RGBA` e os extremos do canal alfa cobrirem `0` e próximo de
+`255`, a imagem já está recortada — baste enquadrar:
+
+```bash
+python3 -c "
+from PIL import Image
+im = Image.open('foto.png')
+box = im.getchannel('A').point(lambda v: 255 if v > 8 else 0).getbbox()
+pad = 20
+im.crop((max(0,box[0]-pad), max(0,box[1]-pad), min(im.width,box[2]+pad), min(im.height,box[3]+pad))).save('public/images/nome.png')
+"
 ```
 
 ### As pranchas desenhadas
