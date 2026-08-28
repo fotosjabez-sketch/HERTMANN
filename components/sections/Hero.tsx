@@ -81,10 +81,10 @@ export function Hero() {
               transition={{ duration: 1.8, ease: EASE, delay: 0.5 }}
             >
               <motion.div style={reduced ? undefined : { scale: plateScale }}>
-                <div className="relative aspect-[832/1016] w-full">
+                <div className="relative aspect-[776/1116] w-full">
                   <Image
-                    src="/images/piece-ring-box.png"
-                    alt="Aliança Perene em ouro amarelo 18k, no estojo lacado HERTMANN"
+                    src="/images/hero-ring.png"
+                    alt="Anel HERTMANN em ouro branco, com diamante central de talhe oval"
                     fill
                     priority
                     sizes="(max-width: 768px) 64vw, 25rem"

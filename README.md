@@ -66,6 +66,7 @@ de contacto, para assentarem sobre as superfícies brancas e cinzentas da marca.
 | `campaign-portrait.jpg` | Coleção em destaque |
 | `campaign-hero.jpg` | Página Sobre e imagem Open Graph |
 | `boutique-wide.jpg` / `boutique-tall.jpg` | Ateliê e página Sobre |
+| `hero-ring.png` | Objecto do Hero — o anel de assinatura, recortado sobre o vinheta original |
 
 ### Recortar uma fotografia nova
 
@@ -81,6 +82,19 @@ python3 scripts/cutout.py foto-original.png public/images/nome.png
 ```
 
 Se o fundo não for uniforme, `--inner` e `--outer` afinam os limiares da chave.
+
+Quando o fundo não é uma cor plana — um vinheta, um gradiente, um fundo com
+blobs de luz, como o da fotografia do anel no Hero — `cutout.py` deixa zonas
+por cortar. `scripts/cutout_tolerance.py` resolve isso de outra forma: em vez
+de comparar cada pixel a uma referência global, propaga-se a partir da borda
+comparando cada pixel ao vizinho já classificado como fundo. Segue qualquer
+gradiente, seja qual for a sua forma, e pára exactamente onde o salto de
+luminância é grande — a silhueta nítida da peça.
+
+```bash
+pip install pillow numpy
+python3 scripts/cutout_tolerance.py entrada.png public/images/saida.png
+```
 
 ### As pranchas desenhadas
 
