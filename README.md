@@ -67,6 +67,21 @@ de contacto, para assentarem sobre as superfícies brancas e cinzentas da marca.
 | `campaign-hero.jpg` | Página Sobre e imagem Open Graph |
 | `boutique-wide.jpg` / `boutique-tall.jpg` | Ateliê e página Sobre |
 
+### Recortar uma fotografia nova
+
+`scripts/cutout.py` é o processo que produziu todas as imagens acima. A chave
+parte da cor do fundo lida nas margens, propaga-se apenas pelos pixels ligados à
+borda — para não abrir buracos dentro da peça — e usa uma rampa suave, de modo
+que a **sombra de contacto sobrevive**. É essa sombra que faz a peça assentar na
+página em vez de flutuar sobre ela.
+
+```bash
+pip install pillow
+python3 scripts/cutout.py foto-original.png public/images/nome.png
+```
+
+Se o fundo não for uniforme, `--inner` e `--outer` afinam os limiares da chave.
+
 ### As pranchas desenhadas
 
 Nem todas as peças têm fotografia. As que não têm são apresentadas pelo **desenho de
