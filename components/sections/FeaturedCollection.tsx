@@ -76,8 +76,8 @@ export function FeaturedCollection() {
                 <RevealVeil>
                   <div className="plate relative aspect-[4/5] w-full">
                     <Image
-                      src="/images/campaign-portrait.jpg"
-                      alt="Retrato de campanha: anéis Vertente e argolas em ouro amarelo"
+                      src="/images/campaign-portrait.png"
+                      alt="Retrato de campanha: brincos, colar e anéis HERTMANN em ouro amarelo"
                       fill
                       sizes="(max-width: 900px) 100vw, 46vw"
                       className="object-cover"

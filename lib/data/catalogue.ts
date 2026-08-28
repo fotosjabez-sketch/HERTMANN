@@ -122,9 +122,9 @@ export const pieces: Piece[] = [
     reference: "HM–AR–014",
     drawing: "band",
     image: {
-      src: "/images/piece-ring-box.png",
+      src: "/images/alianca-perene.jpg",
       cutout: true,
-      alt: "Aliança Perene em ouro amarelo, apresentada no estojo HERTMANN",
+      alt: "Aliança Perene, em close-up",
     },
     options: { label: "Aro", values: ["12", "14", "16", "18", "20", "22"] },
     featured: true,
@@ -143,9 +143,9 @@ export const pieces: Piece[] = [
     reference: "HM–AR–027",
     drawing: "band",
     image: {
-      src: "/images/piece-rings.png",
+      src: "/images/par-vertente.jpg",
       cutout: true,
-      alt: "Par de aros Vertente em ouro amarelo escovado",
+      alt: "Par de aros Vertente, em close-up",
     },
     options: { label: "Aro", values: ["12", "14", "16", "18", "20"] },
     featured: true,
@@ -206,9 +206,9 @@ export const pieces: Piece[] = [
     reference: "HM–BR–005",
     drawing: "hoop",
     image: {
-      src: "/images/anel-circunferencia.jpg",
+      src: "/images/brinco-circunferencia.jpg",
       cutout: true,
-      alt: "Anel usado na mão, em close-up",
+      alt: "Brinco Circunferência usado, em close-up",
     },
     options: { label: "Diâmetro", values: ["16 mm", "22 mm", "30 mm"] },
     featured: true,
@@ -310,7 +310,11 @@ export const pieces: Piece[] = [
     measures: "Comprimento 38 cm · Largura 4 mm",
     reference: "HM–CL–017",
     drawing: "choker",
-    image: null,
+    image: {
+      src: "/images/colar-solsticio.jpg",
+      cutout: true,
+      alt: "Colar Solstício usado, em close-up",
+    },
   },
   {
     slug: "brinco-ponto",
@@ -345,7 +349,11 @@ export const pieces: Piece[] = [
     measures: "Comprimento 17,5 cm",
     reference: "HM–PL–035",
     drawing: "links",
-    image: null,
+    image: {
+      src: "/images/pulseira-noturno.jpg",
+      cutout: true,
+      alt: "Pulseira Noturno usada no pulso, em close-up",
+    },
   },
 ];
 
