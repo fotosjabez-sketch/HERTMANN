@@ -163,7 +163,11 @@ export const pieces: Piece[] = [
     measures: "Corrente 42 cm · Pendente Ø 9 mm",
     reference: "HM–CL–008",
     drawing: "pendant",
-    image: null,
+    image: {
+      src: "/images/colar-meridiano.jpg",
+      cutout: true,
+      alt: "Colar Meridiano usado, em close-up sobre o colo",
+    },
     options: { label: "Comprimento", values: ["40 cm", "42 cm", "45 cm"] },
     featured: true,
   },
@@ -181,7 +185,11 @@ export const pieces: Piece[] = [
     measures: "Corrente 45 cm · Pedra 8 × 6 mm",
     reference: "HM–CL–031",
     drawing: "pendantGem",
-    image: null,
+    image: {
+      src: "/images/colar-noturn.jpg",
+      cutout: true,
+      alt: "Colar Noturno usado, em close-up sobre o colo",
+    },
     featured: false,
   },
   {
@@ -197,7 +205,11 @@ export const pieces: Piece[] = [
     measures: "Ø 22 mm · Secção 2,5 mm",
     reference: "HM–BR–005",
     drawing: "hoop",
-    image: null,
+    image: {
+      src: "/images/anel-circunferencia.jpg",
+      cutout: true,
+      alt: "Anel usado na mão, em close-up",
+    },
     options: { label: "Diâmetro", values: ["16 mm", "22 mm", "30 mm"] },
     featured: true,
   },
@@ -215,7 +227,11 @@ export const pieces: Piece[] = [
     measures: "Comprimento 34 mm",
     reference: "HM–BR–019",
     drawing: "drop",
-    image: null,
+    image: {
+      src: "/images/brinco-solsticio.jpg",
+      cutout: true,
+      alt: "Brinco Solstício usado, em close-up",
+    },
     featured: true,
   },
   {
@@ -231,7 +247,11 @@ export const pieces: Piece[] = [
     measures: "Comprimento 18 cm · Largura 6 mm",
     reference: "HM–PL–011",
     drawing: "links",
-    image: null,
+    image: {
+      src: "/images/pulseira-cadencia.jpg",
+      cutout: true,
+      alt: "Pulseira Cadência usada no pulso, em close-up",
+    },
     options: { label: "Comprimento", values: ["17 cm", "18 cm", "19 cm"] },
     featured: true,
   },
@@ -248,7 +268,11 @@ export const pieces: Piece[] = [
     measures: "Ø interno 58 mm · Perfil 5 mm",
     reference: "HM–PL–022",
     drawing: "bangle",
-    image: null,
+    image: {
+      src: "/images/pulseira-arquetipo.jpg",
+      cutout: true,
+      alt: "Pulseira Arquétipo usada no pulso, em close-up",
+    },
     featured: false,
   },
   {
@@ -265,7 +289,11 @@ export const pieces: Piece[] = [
     measures: "Aro 2,2 mm · Altura da coroa 7 mm",
     reference: "HM–AR–040",
     drawing: "solitaire",
-    image: null,
+    image: {
+      src: "/images/anel-noturno.jpg",
+      cutout: true,
+      alt: "Anel Noturno usado na mão, em close-up",
+    },
     options: { label: "Aro", values: ["12", "14", "16", "18"] },
     featured: false,
   },
@@ -297,7 +325,11 @@ export const pieces: Piece[] = [
     measures: "Ø 4 mm",
     reference: "HM–BR–001",
     drawing: "stud",
-    image: null,
+    image: {
+      src: "/images/brinco-ponto.jpg",
+      cutout: true,
+      alt: "Brinco Ponto usado, em close-up",
+    },
   },
   {
     slug: "pulseira-noturno",
